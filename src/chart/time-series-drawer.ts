@@ -94,7 +94,7 @@ export class TimeSeriesDrawer extends Drawer {
   public setRange(range: MovableRange<TimeSeriesData>) {
     const data = range.data;
     if (data.length > 0) {
-      const merge = [...data.map((d) => d.price), ...data.map((d) => d.avg)];
+      const merge = [...data.map((d) => d.price), ...data.map((d) => d.avg).filter((i) => i > 0)];
       this.minValue = min(merge);
       this.maxValue = max(merge);
     } else {

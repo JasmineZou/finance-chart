@@ -53,6 +53,7 @@ export class CandleStickDrawer extends Drawer {
     super.setRange(range);
   }
   public getYAxisDetail(y: number): YAxisDetail {
+    console.log(this.yScale.invert(y).toFixed(2));
     return {
       left: this.yScale.invert(y).toFixed(2),
     };
